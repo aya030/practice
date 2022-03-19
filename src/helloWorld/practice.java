@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.TreeMap;
 
 public class practice {
 
@@ -12,46 +14,48 @@ public class practice {
 		/**
 		 * /* 1.HelloWorldを変数に代入して表示する
 		 */
-		HelloWorld();
+		helloWorld();
 
 		/**
 		 * /* 2.1から10までを足した値を計算して表示する
 		 */
-		Sun();
+		sum();
 
 		/**
 		 * /* 3.3年後の今日が何曜日なのかを計算して表示する
 		 */
 		/* ※LocalDateTimeとDayOfWeekを使う */
-		Day();
+		day();
 
 		/**
 		 * /* 4.引数が0なら偽。引数が1なら真と表示する
 		 */
 		/* TrueFalse関数は別定義 */
-		TrueFalse(0);/* 偽 */
-		TrueFalse(1);/* 真 */
-		TrueFalse(3);/* 0か1を入力してください */
+		trueFalse(0);/* 偽 */
+		trueFalse(1);/* 真 */
+		trueFalse(3);/* 0か1を入力してください */
 
 		/**
-		 * /* 5.String型のListを作成して表示する
+		 * /* 5..1.String型のListを作成して表示する
 		 */
-		DesertList();
+		desertList();
 
 		/**
-		 * /* 5.String型のMapを作成して表示する
+		 * /* 5..2.String型のMapを作成して表示する
 		 */
-		AddressList();
-		
+		addressList();
+
+		/**
+		 * /* 5..3.String型のMapを作成して表示する 昇順にソートする
+		 */
+		numberList();
+
 	}
-	
-	
-	
 
 	/**
 	 * /* 1.HelloWorldを変数に代入して表示する
 	 */
-	private static void HelloWorld() {
+	private static void helloWorld() {
 		String greeting = "Hello World";
 		System.out.println(greeting);
 	}
@@ -59,7 +63,7 @@ public class practice {
 	/**
 	 * /* 2.1から10までを足した値を計算して表示する
 	 */
-	private static void Sun() {
+	private static void sum() {
 		int sum = 0;
 		for (int i = 1; i <= 10; i++) {
 			sum += i;
@@ -71,7 +75,7 @@ public class practice {
 	 * /* 3.3年後の今日が何曜日なのかを計算して表示する
 	 */
 	/* ※LocalDateTimeとDayOfWeekを使う */
-	private static void Day() {
+	private static void day() {
 		LocalDateTime day = LocalDateTime.now();
 		/* 今日の曜日 */
 //	day.getDayOfWeek();
@@ -84,7 +88,7 @@ public class practice {
 	/**
 	 * /* 4.引数が0なら偽。引数が1なら真とコンソール画面に表示する
 	 */
-	private static void TrueFalse(int test) {
+	private static void trueFalse(int test) {
 		if (test == 1) {
 			System.out.println("真");
 		} else if (test == 0) {
@@ -97,7 +101,7 @@ public class practice {
 	/**
 	 * /* 5.String型のListを作成して表示する
 	 */
-	private static void DesertList() {
+	private static void desertList() {
 		List<String> list = new ArrayList<>();
 		list.add("ケーキ");
 		list.add("クッキー");
@@ -114,13 +118,27 @@ public class practice {
 	/**
 	 * /* 5.String型のMapを作成して表示する
 	 */
-	private static void AddressList() {
+	private static void addressList() {
 		Map<String, String> map = new HashMap<>();
 		map.put("兵庫県", "神戸市");
 		map.put("大阪府", "大阪市");
 		map.put("奈良県", "奈良市");
 
 		for (Map.Entry<String, String> entry : map.entrySet()) {
+			System.out.println(entry.getKey() + " : " + entry.getValue());
+		}
+	}
+
+	private static void numberList() {
+		Map<Integer, String> map = new TreeMap<>();
+		map.put(6, "six");
+		map.put(1, "one");
+		map.put(5, "five");
+		map.put(2, "two");
+		map.put(4, "four");
+		map.put(3, "three");
+
+		for (Entry<Integer, String> entry : map.entrySet()) {
 			System.out.println(entry.getKey() + " : " + entry.getValue());
 		}
 	}
