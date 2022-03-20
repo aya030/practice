@@ -52,6 +52,8 @@ public class Practice {
 
 	}
 
+	/*メソッドたち*/
+	
 	/**
 	 * /* 1.HelloWorldを変数に代入して表示する
 	 */
