@@ -61,6 +61,7 @@ public class Practice {
 		String greeting = "Hello World";
 		System.out.println(greeting);
 	}
+	
 
 	/**
 	 * /* 2.1から10までを足した値を計算して表示する
