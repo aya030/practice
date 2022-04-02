@@ -2,13 +2,15 @@ package helloWorld;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
+import java.util.stream.IntStream;
 
-public class practice {
+public class Practice {
 
 	public static void main(String[] args) {
 		/**
@@ -38,7 +40,7 @@ public class practice {
 		/**
 		 * /* 5..1.String型のListを作成して表示する
 		 */
-		desertList();
+		dessertList();
 
 		/**
 		 * /* 5..2.String型のMapを作成して表示する
@@ -49,6 +51,11 @@ public class practice {
 		 * /* 5..3.String型のMapを作成して表示する 昇順にソートする
 		 */
 		numberList();
+		
+		/**
+		 * /* 5..4.String型のMapを作成して表示する 昇順にソートする
+		 */
+		brassInstrumentList();
 
 	}
 
@@ -64,11 +71,14 @@ public class practice {
 	 * /* 2.1から10までを足した値を計算して表示する
 	 */
 	private static void sum() {
-		int sum = 0;
-		for (int i = 1; i <= 10; i++) {
-			sum += i;
-		}
-		System.out.println(sum);
+//		int sum = 0;
+//		for (int i = 1; i <= 10; i++) {
+//			sum += i;
+//		}
+//		System.out.println(sum);
+		
+		/*streamAPIを使って一行で書いてみる*/
+		System.out.println(IntStream.rangeClosed(1,10).sum());
 	}
 
 	/**
@@ -101,7 +111,7 @@ public class practice {
 	/**
 	 * /* 5.String型のListを作成して表示する
 	 */
-	private static void desertList() {
+	private static void dessertList() {
 		List<String> list = new ArrayList<>();
 		list.add("ケーキ");
 		list.add("クッキー");
@@ -129,6 +139,9 @@ public class practice {
 		}
 	}
 
+	/**
+	 * /* 5..3.String型のMapを作成して表示する 昇順にソートする
+	 */
 	private static void numberList() {
 		Map<Integer, String> map = new TreeMap<>();
 		map.put(6, "six");
@@ -141,6 +154,15 @@ public class practice {
 		for (Entry<Integer, String> entry : map.entrySet()) {
 			System.out.println(entry.getKey() + " : " + entry.getValue());
 		}
+	}
+	
+	/**
+	 * /* 5..4.String型のMapを作成して表示する 昇順にソートする
+	 */
+	private static void brassInstrumentList() {
+		Arrays.asList("Trumpet", "Horn", "Trombone","Euph","Horn").stream().forEach(System.out::println);
+		System.out.println("----------------------");
+		Arrays.asList("Trumpet", "Horn", "Trombone","Euph","Horn").parallelStream().forEach(System.out::println);
 	}
 
 }
