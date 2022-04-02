@@ -160,9 +160,9 @@ public class Practice {
 	 * /* 5..4.String型のMapを作成して表示する 昇順にソートする
 	 */
 	private static void brassInstrumentList() {
-		Arrays.asList("Trumpet", "Horn", "Trombone","Euph","Horn").stream().forEach(System.out::println);
+		Arrays.asList("Trumpet", "Horn", "Trombone","Euph","Tuba").stream().forEach(System.out::println);
 		System.out.println("----------------------");
-		Arrays.asList("Trumpet", "Horn", "Trombone","Euph","Horn").parallelStream().forEach(System.out::println);
+		Arrays.asList("Trumpet", "Horn", "Trombone","Euph","Tuba").parallelStream().forEach(System.out::println);
 	}
 
 }
