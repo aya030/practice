@@ -60,7 +60,7 @@ public class HaveAnAbnormality {
 		 * /* 6.charAtメソッドを使って文字列から引数で指定された位置にある1文字だけを抜き出す。
 		 * StringIndexOutOfBoundsExceptionエラー
 		 */
-		Strawberry();
+		strawberry();
 
 	}
 
@@ -164,7 +164,7 @@ public class HaveAnAbnormality {
 	 * /* 6.charAtメソッドを使って文字列から引数で指定された位置にある1文字だけを抜き出す。
 	 * StringIndexOutOfBoundsExceptionエラー
 	 */
-	public static void Strawberry() {
+	public static void strawberry() {
 		try {
 			String str = "Strawberry";
 			System.out.println(str.charAt(10));
