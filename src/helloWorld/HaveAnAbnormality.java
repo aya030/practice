@@ -51,6 +51,16 @@ public class HaveAnAbnormality {
 		 * /* 5.Integer.parseIntメソッドを実行し文字列"五"の変換結果を変数iに代入する時の例外処理
 		 */
 		number();
+		
+		System.out.println();
+		System.out.println("----------------------");
+		System.out.println();
+		
+		/**
+		 * /* 6.charAtメソッドを使って文字列から引数で指定された位置にある1文字だけを抜き出す。
+		 * StringIndexOutOfBoundsExceptionエラー
+		 */
+		Strawberry();
 
 	}
 
@@ -63,9 +73,9 @@ public class HaveAnAbnormality {
 	 */
 	public static void calculation() {
 		try (Scanner scanner = new Scanner(System.in)) {
-			System.out.println("整数値を入力してください");
+			System.out.println("整数値を入力してください(小数点以下の数値を入れると例外処理が行われます)");
 			int num1 = scanner.nextInt();
-			System.out.println("整数値を入力してください");
+			System.out.println("整数値を入力してください(0を入れると例外処理が行われます)");
 			int num2 = scanner.nextInt();
 
 			double result = (double) num1 / (double) num2;
@@ -88,12 +98,12 @@ public class HaveAnAbnormality {
 	public static void result(int num1, int num2) {
 		try {
 			if (num2 == 0) {
-				throw new ArithmeticException("0で割ったときの例外を発生させる");
+				throw new ArithmeticException("0で割ったときの例外を発生させました");
 			}
 			int result = num1 / num2;
 			System.out.println(result);
 		} catch (Exception e) {
-			System.out.println("例外が発生しました。");
+			System.out.println("例外が発生しました。割る数に０以外を指定してください。");
 			System.out.print(e);
 		} finally {
 			System.out.print("計算が終わりました");
@@ -114,7 +124,7 @@ public class HaveAnAbnormality {
 				System.out.println(list.get(i));
 			}
 		} catch (IndexOutOfBoundsException e) {
-			System.out.println("例外が発生しました。");
+			System.out.println("例外が発生しました。1つ楽器が足りません");
 			System.out.println(e);
 		} finally {
 			System.out.println("処理を終了しました");
@@ -144,6 +154,22 @@ public class HaveAnAbnormality {
 			int i = Integer.parseInt("五");
 		} catch (NumberFormatException e) {
 			System.out.println("例外が発生しました。数値のフォーマットに関する例外です");
+			System.out.println(e);
+		} finally {
+			System.out.println("処理を終了しました");
+		}
+	}
+	
+	/**
+	 * /* 6.charAtメソッドを使って文字列から引数で指定された位置にある1文字だけを抜き出す。
+	 * StringIndexOutOfBoundsExceptionエラー
+	 */
+	public static void Strawberry() {
+		try {
+			String str = "Strawberry";
+			System.out.println(str.charAt(10));
+		} catch (StringIndexOutOfBoundsException e) {
+			System.out.println("例外が発生しました。文字数は0から数えてください");
 			System.out.println(e);
 		} finally {
 			System.out.println("処理を終了しました");
