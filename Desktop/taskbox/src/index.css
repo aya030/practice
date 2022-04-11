@@ -330,9 +330,6 @@
  textarea[disabled] {
    opacity: 0.5;
  }
- input:-webkit-autofill {
-   -webkit-box-shadow: 0 0 0 1000px white inset;
- }
  .checkbox {
    display: inline-block;
    height: 3rem;
@@ -365,7 +362,6 @@
    color: #2cc5d2;
    margin-top: -1px;
    font-family: "percolate";
-   speak: none;
    font-style: normal;
    font-weight: normal;
    font-variant: normal;
@@ -423,7 +419,6 @@
  [class^="icon-"],
  [class*=" icon-"] {
    font-family: "percolate";
-   speak: none;
    font-style: normal;
    font-weight: normal;
    font-variant: normal;
